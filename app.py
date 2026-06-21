@@ -204,8 +204,8 @@ if st.session_state.logged_in:
                         image_path = record[9].replace("\\", "/")
                         if os.path.exists(image_path):
                             st.image(image_path, width=250)
-                            else:
-                                st.warning("Image not available")
+                        else:
+                            st.warning("Image not available")
 
                     # ---------------- CLAIM HISTORY ----------------
 
