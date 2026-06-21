@@ -26,8 +26,6 @@ st.set_page_config(
     layout="wide"
 )
 
-filepath = os.path.join("uploads", filename)
-
 UPLOAD_FOLDER = "uploads"
 
 if not os.path.exists(UPLOAD_FOLDER):
@@ -203,12 +201,11 @@ if st.session_state.logged_in:
                     # ---------------- PHOTO DISPLAY ----------------
 
                     if record[9]:
-
-                        st.image(
-                            record[9],
-                            width=250
-                        )
-
+                        image_path = record[9].replace("\\", "/")
+                        if os.path.exists(image_path):
+                            st.image(image_path, width=250)
+                            else:
+                                st.warning("Image not available")
 
                     # ---------------- CLAIM HISTORY ----------------
 
