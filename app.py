@@ -26,6 +26,7 @@ st.set_page_config(
     layout="wide"
 )
 
+filepath = os.path.join("uploads", filename)
 
 UPLOAD_FOLDER = "uploads"
 
